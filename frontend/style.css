@@ -1,0 +1,14 @@
+.title {
+    text-align: center;
+}
+
+.flex-grid {
+    display: flex;
+}
+.col {
+    margin: 10px;
+    text-align: center;
+    flex-grow: 1;
+    flex-shrink: 1;
+    width: 32%;
+}
