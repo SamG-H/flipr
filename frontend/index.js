@@ -1,11 +1,12 @@
+renderHome();
+
 function getStacks(){
     fetch('http://localhost:3000/stacks')
 	.then(r => r.json())
-	.then(data => {
-	    renderStacks(data);
+	.then(stacks => {
+	    renderStacks(stacks);
 	})
 }
-renderHome();
 
 function renderIntro(){
     const introDiv = document.querySelector("#flipr-intro");
@@ -14,17 +15,41 @@ function renderIntro(){
     introDiv.appendChild(introPara);
 }
 
-function renderForm(){
+function createStack(e){
+    e.preventDefault();
+    fetch('http://localhost:3000/stacks', {
+	method: "POST",
+	headers: 
+	{
+	    "Content-Type": "application/json",
+	    Accept: "application/json"
+	},
+	
+	body: JSON.stringify({
+	    "title": title.value
+	})
+    })
+	.then( (response) => response.json())
+	.then( (stack) => {
+	    if(stack.title){
+		renderStack(stack);
+	    }
+	    e.target.reset();
+	})
+}
+
+function renderStackForm(){
     const contentDiv = document.querySelector(".content");
     const newStackForm = document.createElement("form");
-    newStackForm.innerHTML = '<div><label for="title">Title: </label><input id="title"></div><div><input type="submit" value="Create new stack"></div>';
+    newStackForm.setAttribute('id', 'new-stack');
+    newStackForm.innerHTML = '<h2>Create a new stack of flash cards</h2><div><label for="title">Title: </label><input id="title"></div><div><input type="submit" value="Create new stack"></div>';
+    newStackForm.addEventListener("submit", createStack);
     contentDiv.appendChild(newStackForm);
 }
 
 function renderHome(){
     clearScreen();
     renderIntro();
-    renderForm();
     getStacks();
 }
 
@@ -36,12 +61,6 @@ document.addEventListener("DOMContentLoaded", () => {
 })
 
 
-function renderStacks(stacks){
-    stacks.forEach(stack => {
-	renderStack(stack);
-    })
-}
-
 function renderNextCard(e){
 
 }
@@ -50,18 +69,49 @@ function renderPreviousCard(e){
 
 }
 
-function addCard(e){
-    clearScreen();
-    const grid = document.querySelector(".content");
-    const cardForm = document.createElement('form');
-    cardForm.innerHTML = '<div><label for="front">Front: </label><input id="front" /></div><div><label for="back">Back: </label><input id="back" /></div><div><input type="submit" value="Add card to stack" /></div>';
-    grid.appendChild(cardForm);
+function createCard(e){
+    debugger;
+    e.preventDefault();
+    fetch('http://localhost:3000/cards', {
+	method: "POST",
+	headers: 
+	{
+	    "Content-Type": "application/json",
+	    Accept: "application/json"
+	},
+	
+	body: JSON.stringify({
+	    "front": front.value,
+	    "back": back.value
+	})
+    })
+	.then( (response) => response.json())
+	.then( (card) => {
+	    if(card.front){
+		renderCard(card);
+	    }
+	    e.target.reset();
+	})
+
 }
 
+function renderCardForm(stackId){
+    const stackDiv = document.getElementById(`${stackId}`);
+    const cardForm = document.createElement('form');
+    cardForm.innerHTML = '<h3>Add a new card to this stack</h3><div><label for="front">Front of card: </label><input id="front" /></div><div><label for="back">Back of card: </label><input id="back" /></div><div><input type="submit" value="Add card to stack" /></div>';
+    stackDiv.appendChild(cardForm);
+    cardForm.addEventListener("submit", createCard);
+}
+
+function renderCards(cards){
+    cards.forEach(card => {
+	renderCard(card);
+    })
+}
 function renderCard(card){
     const grid = document.querySelector(".content");
-    const cardDiv = document.createElement('div');
-    const stack = document.createElement('h2');
+    const cardDiv = document.getElementById(`${card.stack_id}`)
+    cardDiv.removeChild(cardDiv.lastChild);
     const front = document.createElement('p');
     const back = document.createElement('p');
     const nextBtn = document.createElement('button');
@@ -70,16 +120,20 @@ function renderCard(card){
     prevBtn.innerText = "<-";
     prevBtn.addEventListener("click", renderPreviousCard);
     nextBtn.addEventListener("click", renderNextCard);
-    stack.innerText = `${card.stack.title}`;
-    stack.addEventListener("click", addCard);
     front.innerText = `front: ${card.front}`;
     back.innerText = `back: ${card.back}`;
-    cardDiv.appendChild(stack);
     cardDiv.appendChild(front);
     cardDiv.appendChild(back);
     cardDiv.appendChild(prevBtn);
     cardDiv.appendChild(nextBtn);
-    grid.appendChild(cardDiv);
+    grid.prepend(cardDiv);
+}
+    
+function renderStacks(stacks){
+    stacks.forEach(stack => {
+	renderStack(stack);
+    })
+    renderStackForm();
 }
 
 function renderStack(stack){
@@ -87,8 +141,8 @@ function renderStack(stack){
     const stackDiv = document.createElement('div');
     const viewBtn = document.createElement('button');
     viewBtn.innerText = "Check this stack out!";
-    stackDiv.className = `${stack.id}`;
-    viewBtn.addEventListener("click", getCard);
+    stackDiv.setAttribute('id', `${stack.id}`);
+    viewBtn.addEventListener("click", getCards);
     const title = document.createElement('h2');
     title.innerText = stack.title;
     stackDiv.appendChild(title);
@@ -96,14 +150,14 @@ function renderStack(stack){
     stackDiv.appendChild(viewBtn);
 }
 
-function getCard(e){
-    clearScreen();
-    fetch('http://localhost:3000/cards/1')
+function getCards(e){
+    const stackId = e.target.parentElement.id;
+    fetch(`http://localhost:3000/stacks/${stackId}`)
 	.then(r => r.json())
-	.then(data => {
-	    renderCard(data);
+	.then(cards => {
+	    renderCards(cards);
 	})
-
+    renderCardForm(stackId);
 }
 
 function clearScreen(){
