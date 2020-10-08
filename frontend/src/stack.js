@@ -11,7 +11,7 @@ class Stack {
 	viewBtn.setAttribute('id', `${this.id} btn`);
 	viewBtn.innerText = "Check this stack out!";
 	stackDiv.setAttribute('id', `${this.id}`);
-	viewBtn.addEventListener("click", getCards);
+	viewBtn.addEventListener("click", app.getCards);
 	const title = document.createElement('h2');
 	title.innerText = this.title;
 	stackDiv.appendChild(title);
