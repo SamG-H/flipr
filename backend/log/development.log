@@ -1943,3 +1943,864 @@ Processing by StacksController#show as */*
 Completed 200 OK in 5ms (Views: 2.7ms | ActiveRecord: 0.4ms | Allocations: 1588)
 
 
+Started GET "/stacks" for 127.0.0.1 at 2020-10-07 11:04:27 -0700
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by StacksController#index as */*
+  [1m[36mStack Load (0.4ms)[0m  [1m[34mSELECT "stacks".* FROM "stacks"[0m
+  ↳ app/controllers/stacks_controller.rb:4:in `index'
+Completed 200 OK in 10ms (Views: 9.3ms | ActiveRecord: 0.4ms | Allocations: 1774)
+
+
+Started GET "/stacks/1" for 127.0.0.1 at 2020-10-07 11:04:28 -0700
+Processing by StacksController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mStack Load (0.2ms)[0m  [1m[34mSELECT "stacks".* FROM "stacks" WHERE "stacks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stacks_controller.rb:8:in `show'
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."stack_id" = ?[0m  [["stack_id", 1]]
+  ↳ app/controllers/stacks_controller.rb:9:in `show'
+Completed 200 OK in 4ms (Views: 1.8ms | ActiveRecord: 0.4ms | Allocations: 1618)
+
+
+Started GET "/stacks" for 127.0.0.1 at 2020-10-07 11:04:41 -0700
+Processing by StacksController#index as */*
+  [1m[36mStack Load (0.3ms)[0m  [1m[34mSELECT "stacks".* FROM "stacks"[0m
+  ↳ app/controllers/stacks_controller.rb:4:in `index'
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.3ms | Allocations: 1759)
+
+
+Started GET "/stacks/1" for 127.0.0.1 at 2020-10-07 11:04:43 -0700
+Processing by StacksController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mStack Load (0.3ms)[0m  [1m[34mSELECT "stacks".* FROM "stacks" WHERE "stacks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stacks_controller.rb:8:in `show'
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."stack_id" = ?[0m  [["stack_id", 1]]
+  ↳ app/controllers/stacks_controller.rb:9:in `show'
+Completed 200 OK in 8ms (Views: 4.0ms | ActiveRecord: 0.6ms | Allocations: 1588)
+
+
+Started GET "/stacks" for 127.0.0.1 at 2020-10-07 11:06:28 -0700
+Processing by StacksController#index as */*
+  [1m[36mStack Load (0.3ms)[0m  [1m[34mSELECT "stacks".* FROM "stacks"[0m
+  ↳ app/controllers/stacks_controller.rb:4:in `index'
+Completed 200 OK in 8ms (Views: 6.4ms | ActiveRecord: 0.3ms | Allocations: 1758)
+
+
+Started GET "/stacks/1" for 127.0.0.1 at 2020-10-07 11:06:29 -0700
+Processing by StacksController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mStack Load (0.2ms)[0m  [1m[34mSELECT "stacks".* FROM "stacks" WHERE "stacks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stacks_controller.rb:8:in `show'
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."stack_id" = ?[0m  [["stack_id", 1]]
+  ↳ app/controllers/stacks_controller.rb:9:in `show'
+Completed 200 OK in 5ms (Views: 2.4ms | ActiveRecord: 0.4ms | Allocations: 1588)
+
+
+Started GET "/stacks" for 127.0.0.1 at 2020-10-07 11:06:38 -0700
+Processing by StacksController#index as */*
+  [1m[36mStack Load (0.3ms)[0m  [1m[34mSELECT "stacks".* FROM "stacks"[0m
+  ↳ app/controllers/stacks_controller.rb:4:in `index'
+Completed 200 OK in 9ms (Views: 6.9ms | ActiveRecord: 0.3ms | Allocations: 1758)
+
+
+Started GET "/stacks" for 127.0.0.1 at 2020-10-07 11:08:43 -0700
+Processing by StacksController#index as */*
+  [1m[36mStack Load (0.7ms)[0m  [1m[34mSELECT "stacks".* FROM "stacks"[0m
+  ↳ app/controllers/stacks_controller.rb:4:in `index'
+Completed 200 OK in 8ms (Views: 6.5ms | ActiveRecord: 0.7ms | Allocations: 1758)
+
+
+Started GET "/stacks/1" for 127.0.0.1 at 2020-10-07 11:08:44 -0700
+Processing by StacksController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mStack Load (0.2ms)[0m  [1m[34mSELECT "stacks".* FROM "stacks" WHERE "stacks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stacks_controller.rb:8:in `show'
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."stack_id" = ?[0m  [["stack_id", 1]]
+  ↳ app/controllers/stacks_controller.rb:9:in `show'
+Completed 200 OK in 8ms (Views: 4.8ms | ActiveRecord: 0.4ms | Allocations: 1588)
+
+
+Started GET "/stacks" for 127.0.0.1 at 2020-10-07 11:08:56 -0700
+Processing by StacksController#index as */*
+  [1m[36mStack Load (0.3ms)[0m  [1m[34mSELECT "stacks".* FROM "stacks"[0m
+  ↳ app/controllers/stacks_controller.rb:4:in `index'
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.3ms | Allocations: 1758)
+
+
+Started GET "/stacks/1" for 127.0.0.1 at 2020-10-07 11:08:57 -0700
+Processing by StacksController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mStack Load (0.1ms)[0m  [1m[34mSELECT "stacks".* FROM "stacks" WHERE "stacks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stacks_controller.rb:8:in `show'
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."stack_id" = ?[0m  [["stack_id", 1]]
+  ↳ app/controllers/stacks_controller.rb:9:in `show'
+Completed 200 OK in 17ms (Views: 5.3ms | ActiveRecord: 0.4ms | Allocations: 1591)
+
+
+Started GET "/stacks" for 127.0.0.1 at 2020-10-07 11:09:25 -0700
+Processing by StacksController#index as */*
+  [1m[36mStack Load (0.3ms)[0m  [1m[34mSELECT "stacks".* FROM "stacks"[0m
+  ↳ app/controllers/stacks_controller.rb:4:in `index'
+Completed 200 OK in 21ms (Views: 19.9ms | ActiveRecord: 0.3ms | Allocations: 1758)
+
+
+Started GET "/stacks/1" for 127.0.0.1 at 2020-10-07 11:09:27 -0700
+Processing by StacksController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mStack Load (0.2ms)[0m  [1m[34mSELECT "stacks".* FROM "stacks" WHERE "stacks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stacks_controller.rb:8:in `show'
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."stack_id" = ?[0m  [["stack_id", 1]]
+  ↳ app/controllers/stacks_controller.rb:9:in `show'
+Completed 200 OK in 6ms (Views: 3.7ms | ActiveRecord: 0.4ms | Allocations: 1588)
+
+
+Started GET "/stacks" for 127.0.0.1 at 2020-10-07 11:09:31 -0700
+Processing by StacksController#index as */*
+  [1m[36mStack Load (0.3ms)[0m  [1m[34mSELECT "stacks".* FROM "stacks"[0m
+  ↳ app/controllers/stacks_controller.rb:4:in `index'
+Completed 200 OK in 8ms (Views: 6.7ms | ActiveRecord: 0.3ms | Allocations: 1758)
+
+
+Started GET "/stacks/1" for 127.0.0.1 at 2020-10-07 11:09:32 -0700
+Processing by StacksController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mStack Load (0.2ms)[0m  [1m[34mSELECT "stacks".* FROM "stacks" WHERE "stacks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stacks_controller.rb:8:in `show'
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."stack_id" = ?[0m  [["stack_id", 1]]
+  ↳ app/controllers/stacks_controller.rb:9:in `show'
+Completed 200 OK in 6ms (Views: 3.6ms | ActiveRecord: 0.4ms | Allocations: 1588)
+
+
+Started GET "/stacks" for 127.0.0.1 at 2020-10-07 11:09:52 -0700
+Processing by StacksController#index as */*
+  [1m[36mStack Load (0.3ms)[0m  [1m[34mSELECT "stacks".* FROM "stacks"[0m
+  ↳ app/controllers/stacks_controller.rb:4:in `index'
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.3ms | Allocations: 1758)
+
+
+Started GET "/stacks/1" for 127.0.0.1 at 2020-10-07 11:09:54 -0700
+Processing by StacksController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mStack Load (0.2ms)[0m  [1m[34mSELECT "stacks".* FROM "stacks" WHERE "stacks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stacks_controller.rb:8:in `show'
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."stack_id" = ?[0m  [["stack_id", 1]]
+  ↳ app/controllers/stacks_controller.rb:9:in `show'
+Completed 200 OK in 5ms (Views: 2.2ms | ActiveRecord: 0.4ms | Allocations: 1588)
+
+
+Started GET "/stacks" for 127.0.0.1 at 2020-10-07 11:10:07 -0700
+Processing by StacksController#index as */*
+  [1m[36mStack Load (0.2ms)[0m  [1m[34mSELECT "stacks".* FROM "stacks"[0m
+  ↳ app/controllers/stacks_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.2ms | Allocations: 1758)
+
+
+Started GET "/stacks/1" for 127.0.0.1 at 2020-10-07 11:10:08 -0700
+Processing by StacksController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mStack Load (0.2ms)[0m  [1m[34mSELECT "stacks".* FROM "stacks" WHERE "stacks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stacks_controller.rb:8:in `show'
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."stack_id" = ?[0m  [["stack_id", 1]]
+  ↳ app/controllers/stacks_controller.rb:9:in `show'
+Completed 200 OK in 4ms (Views: 2.0ms | ActiveRecord: 0.3ms | Allocations: 1588)
+
+
+Started GET "/stacks" for 127.0.0.1 at 2020-10-07 11:10:43 -0700
+Processing by StacksController#index as */*
+  [1m[36mStack Load (0.4ms)[0m  [1m[34mSELECT "stacks".* FROM "stacks"[0m
+  ↳ app/controllers/stacks_controller.rb:4:in `index'
+Completed 200 OK in 19ms (Views: 18.3ms | ActiveRecord: 0.4ms | Allocations: 1758)
+
+
+Started GET "/stacks/1" for 127.0.0.1 at 2020-10-07 11:10:44 -0700
+Processing by StacksController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mStack Load (0.2ms)[0m  [1m[34mSELECT "stacks".* FROM "stacks" WHERE "stacks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stacks_controller.rb:8:in `show'
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."stack_id" = ?[0m  [["stack_id", 1]]
+  ↳ app/controllers/stacks_controller.rb:9:in `show'
+Completed 200 OK in 6ms (Views: 3.1ms | ActiveRecord: 0.4ms | Allocations: 1588)
+
+
+Started GET "/stacks" for 127.0.0.1 at 2020-10-07 11:11:04 -0700
+Processing by StacksController#index as */*
+  [1m[36mStack Load (0.3ms)[0m  [1m[34mSELECT "stacks".* FROM "stacks"[0m
+  ↳ app/controllers/stacks_controller.rb:4:in `index'
+Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.3ms | Allocations: 1758)
+
+
+Started GET "/stacks/1" for 127.0.0.1 at 2020-10-07 11:11:06 -0700
+Processing by StacksController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mStack Load (0.1ms)[0m  [1m[34mSELECT "stacks".* FROM "stacks" WHERE "stacks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stacks_controller.rb:8:in `show'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."stack_id" = ?[0m  [["stack_id", 1]]
+  ↳ app/controllers/stacks_controller.rb:9:in `show'
+Completed 200 OK in 3ms (Views: 1.5ms | ActiveRecord: 0.2ms | Allocations: 1588)
+
+
+Started GET "/stacks" for 127.0.0.1 at 2020-10-07 11:11:18 -0700
+Processing by StacksController#index as */*
+  [1m[36mStack Load (0.3ms)[0m  [1m[34mSELECT "stacks".* FROM "stacks"[0m
+  ↳ app/controllers/stacks_controller.rb:4:in `index'
+Completed 200 OK in 11ms (Views: 10.1ms | ActiveRecord: 0.3ms | Allocations: 1758)
+
+
+Started GET "/stacks/1" for 127.0.0.1 at 2020-10-07 11:11:19 -0700
+Processing by StacksController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mStack Load (0.1ms)[0m  [1m[34mSELECT "stacks".* FROM "stacks" WHERE "stacks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stacks_controller.rb:8:in `show'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."stack_id" = ?[0m  [["stack_id", 1]]
+  ↳ app/controllers/stacks_controller.rb:9:in `show'
+Completed 200 OK in 3ms (Views: 1.6ms | ActiveRecord: 0.3ms | Allocations: 1588)
+
+
+Started GET "/stacks" for 127.0.0.1 at 2020-10-07 11:11:27 -0700
+Processing by StacksController#index as */*
+  [1m[36mStack Load (0.4ms)[0m  [1m[34mSELECT "stacks".* FROM "stacks"[0m
+  ↳ app/controllers/stacks_controller.rb:4:in `index'
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.4ms | Allocations: 1758)
+
+
+Started GET "/stacks/1" for 127.0.0.1 at 2020-10-07 11:11:28 -0700
+Processing by StacksController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mStack Load (0.3ms)[0m  [1m[34mSELECT "stacks".* FROM "stacks" WHERE "stacks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stacks_controller.rb:8:in `show'
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."stack_id" = ?[0m  [["stack_id", 1]]
+  ↳ app/controllers/stacks_controller.rb:9:in `show'
+Completed 200 OK in 5ms (Views: 2.5ms | ActiveRecord: 0.5ms | Allocations: 1588)
+
+
+Started GET "/stacks" for 127.0.0.1 at 2020-10-07 11:11:55 -0700
+Processing by StacksController#index as */*
+  [1m[36mStack Load (0.3ms)[0m  [1m[34mSELECT "stacks".* FROM "stacks"[0m
+  ↳ app/controllers/stacks_controller.rb:4:in `index'
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.3ms | Allocations: 1758)
+
+
+Started GET "/stacks/1" for 127.0.0.1 at 2020-10-07 11:11:56 -0700
+Processing by StacksController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mStack Load (0.2ms)[0m  [1m[34mSELECT "stacks".* FROM "stacks" WHERE "stacks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stacks_controller.rb:8:in `show'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."stack_id" = ?[0m  [["stack_id", 1]]
+  ↳ app/controllers/stacks_controller.rb:9:in `show'
+Completed 200 OK in 4ms (Views: 1.9ms | ActiveRecord: 0.3ms | Allocations: 1588)
+
+
+Started GET "/stacks" for 127.0.0.1 at 2020-10-07 11:11:59 -0700
+Processing by StacksController#index as */*
+  [1m[36mStack Load (0.5ms)[0m  [1m[34mSELECT "stacks".* FROM "stacks"[0m
+  ↳ app/controllers/stacks_controller.rb:4:in `index'
+Completed 200 OK in 13ms (Views: 11.7ms | ActiveRecord: 0.5ms | Allocations: 1758)
+
+
+Started GET "/stacks/1" for 127.0.0.1 at 2020-10-07 11:12:01 -0700
+Processing by StacksController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mStack Load (0.2ms)[0m  [1m[34mSELECT "stacks".* FROM "stacks" WHERE "stacks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stacks_controller.rb:8:in `show'
+  [1m[36mCard Load (0.5ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."stack_id" = ?[0m  [["stack_id", 1]]
+  ↳ app/controllers/stacks_controller.rb:9:in `show'
+Completed 200 OK in 16ms (Views: 13.0ms | ActiveRecord: 0.7ms | Allocations: 1588)
+
+
+Started GET "/stacks" for 127.0.0.1 at 2020-10-07 11:12:31 -0700
+Processing by StacksController#index as */*
+  [1m[36mStack Load (0.2ms)[0m  [1m[34mSELECT "stacks".* FROM "stacks"[0m
+  ↳ app/controllers/stacks_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.2ms | Allocations: 1758)
+
+
+Started GET "/stacks/1" for 127.0.0.1 at 2020-10-07 11:12:32 -0700
+Processing by StacksController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mStack Load (0.2ms)[0m  [1m[34mSELECT "stacks".* FROM "stacks" WHERE "stacks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stacks_controller.rb:8:in `show'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."stack_id" = ?[0m  [["stack_id", 1]]
+  ↳ app/controllers/stacks_controller.rb:9:in `show'
+Completed 200 OK in 4ms (Views: 1.7ms | ActiveRecord: 0.3ms | Allocations: 1588)
+
+
+Started POST "/cards" for 127.0.0.1 at 2020-10-07 11:12:36 -0700
+  
+AbstractController::ActionNotFound (The action 'create' could not be found for CardsController):
+  
+actionpack (6.0.3.3) lib/abstract_controller/base.rb:131:in `process'
+actionpack (6.0.3.3) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.3) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+activerecord (6.0.3.3) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.3) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/stacks" for 127.0.0.1 at 2020-10-07 11:12:37 -0700
+Processing by StacksController#index as */*
+  [1m[36mStack Load (0.2ms)[0m  [1m[34mSELECT "stacks".* FROM "stacks"[0m
+  ↳ app/controllers/stacks_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.2ms | Allocations: 1757)
+
+
+Started GET "/stacks" for ::1 at 2020-10-07 11:18:48 -0700
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by StacksController#index as */*
+  [1m[36mStack Load (0.3ms)[0m  [1m[34mSELECT "stacks".* FROM "stacks"[0m
+  ↳ app/controllers/stacks_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.3ms | Allocations: 1774)
+
+
+Started GET "/stacks/1" for ::1 at 2020-10-07 11:18:53 -0700
+Processing by StacksController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mStack Load (0.4ms)[0m  [1m[34mSELECT "stacks".* FROM "stacks" WHERE "stacks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stacks_controller.rb:8:in `show'
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."stack_id" = ?[0m  [["stack_id", 1]]
+  ↳ app/controllers/stacks_controller.rb:9:in `show'
+Completed 200 OK in 6ms (Views: 2.4ms | ActiveRecord: 0.7ms | Allocations: 1618)
+
+
+Started GET "/stacks" for ::1 at 2020-10-07 11:18:59 -0700
+Processing by StacksController#index as */*
+  [1m[36mStack Load (0.3ms)[0m  [1m[34mSELECT "stacks".* FROM "stacks"[0m
+  ↳ app/controllers/stacks_controller.rb:4:in `index'
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.3ms | Allocations: 1758)
+
+
+Started GET "/stacks" for 127.0.0.1 at 2020-10-07 11:22:24 -0700
+Processing by StacksController#index as */*
+  [1m[36mStack Load (0.3ms)[0m  [1m[34mSELECT "stacks".* FROM "stacks"[0m
+  ↳ app/controllers/stacks_controller.rb:4:in `index'
+Completed 200 OK in 8ms (Views: 7.7ms | ActiveRecord: 0.3ms | Allocations: 1758)
+
+
+Started GET "/stacks/1" for 127.0.0.1 at 2020-10-07 11:22:25 -0700
+Processing by StacksController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mStack Load (0.2ms)[0m  [1m[34mSELECT "stacks".* FROM "stacks" WHERE "stacks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stacks_controller.rb:8:in `show'
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."stack_id" = ?[0m  [["stack_id", 1]]
+  ↳ app/controllers/stacks_controller.rb:9:in `show'
+Completed 200 OK in 4ms (Views: 1.9ms | ActiveRecord: 0.4ms | Allocations: 1589)
+
+
+Started GET "/stacks" for 127.0.0.1 at 2020-10-07 11:22:49 -0700
+Processing by StacksController#index as */*
+  [1m[36mStack Load (0.3ms)[0m  [1m[34mSELECT "stacks".* FROM "stacks"[0m
+  ↳ app/controllers/stacks_controller.rb:4:in `index'
+Completed 200 OK in 10ms (Views: 9.1ms | ActiveRecord: 0.3ms | Allocations: 1758)
+
+
+Started GET "/stacks/1" for 127.0.0.1 at 2020-10-07 11:22:50 -0700
+Processing by StacksController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mStack Load (0.1ms)[0m  [1m[34mSELECT "stacks".* FROM "stacks" WHERE "stacks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stacks_controller.rb:8:in `show'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."stack_id" = ?[0m  [["stack_id", 1]]
+  ↳ app/controllers/stacks_controller.rb:9:in `show'
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.3ms | Allocations: 1588)
+
+
+Started GET "/stacks" for 127.0.0.1 at 2020-10-08 13:05:16 -0700
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by StacksController#index as */*
+  [1m[36mStack Load (0.5ms)[0m  [1m[34mSELECT "stacks".* FROM "stacks"[0m
+  ↳ app/controllers/stacks_controller.rb:4:in `index'
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.5ms | Allocations: 1775)
+
+
+Started GET "/stacks/1" for 127.0.0.1 at 2020-10-08 13:05:18 -0700
+Processing by StacksController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mStack Load (0.4ms)[0m  [1m[34mSELECT "stacks".* FROM "stacks" WHERE "stacks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stacks_controller.rb:8:in `show'
+  [1m[36mCard Load (1.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."stack_id" = ?[0m  [["stack_id", 1]]
+  ↳ app/controllers/stacks_controller.rb:9:in `show'
+Completed 200 OK in 18ms (Views: 10.5ms | ActiveRecord: 1.3ms | Allocations: 1618)
+
+
+Started POST "/stacks" for 127.0.0.1 at 2020-10-08 13:05:45 -0700
+Processing by StacksController#create as JSON
+  Parameters: {"title"=>"French", "stack"=>{"title"=>"French"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/stacks_controller.rb:13:in `create'
+  [1m[36mStack Create (0.3ms)[0m  [1m[32mINSERT INTO "stacks" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "French"], ["created_at", "2020-10-08 20:05:45.226807"], ["updated_at", "2020-10-08 20:05:45.226807"]]
+  ↳ app/controllers/stacks_controller.rb:13:in `create'
+  [1m[35m (5.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/stacks_controller.rb:13:in `create'
+Completed 200 OK in 13ms (Views: 0.8ms | ActiveRecord: 6.0ms | Allocations: 3689)
+
+
+Started GET "/stacks" for 127.0.0.1 at 2020-10-08 13:06:44 -0700
+Processing by StacksController#index as */*
+  [1m[36mStack Load (0.4ms)[0m  [1m[34mSELECT "stacks".* FROM "stacks"[0m
+  ↳ app/controllers/stacks_controller.rb:4:in `index'
+Completed 200 OK in 13ms (Views: 12.7ms | ActiveRecord: 0.4ms | Allocations: 1879)
+
+
+Started GET "/stacks/1" for 127.0.0.1 at 2020-10-08 13:06:47 -0700
+Processing by StacksController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mStack Load (0.1ms)[0m  [1m[34mSELECT "stacks".* FROM "stacks" WHERE "stacks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stacks_controller.rb:8:in `show'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."stack_id" = ?[0m  [["stack_id", 1]]
+  ↳ app/controllers/stacks_controller.rb:9:in `show'
+Completed 200 OK in 3ms (Views: 1.4ms | ActiveRecord: 0.2ms | Allocations: 1588)
+
+
+Started GET "/stacks/2" for 127.0.0.1 at 2020-10-08 13:06:49 -0700
+Processing by StacksController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mStack Load (0.2ms)[0m  [1m[34mSELECT "stacks".* FROM "stacks" WHERE "stacks"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/stacks_controller.rb:8:in `show'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."stack_id" = ?[0m  [["stack_id", 2]]
+  ↳ app/controllers/stacks_controller.rb:9:in `show'
+Completed 200 OK in 3ms (Views: 1.3ms | ActiveRecord: 0.3ms | Allocations: 1437)
+
+
+Started GET "/stacks" for 127.0.0.1 at 2020-10-08 13:07:55 -0700
+Processing by StacksController#index as */*
+  [1m[36mStack Load (0.3ms)[0m  [1m[34mSELECT "stacks".* FROM "stacks"[0m
+  ↳ app/controllers/stacks_controller.rb:4:in `index'
+Completed 200 OK in 21ms (Views: 19.9ms | ActiveRecord: 0.3ms | Allocations: 1879)
+
+
+Started POST "/stacks" for 127.0.0.1 at 2020-10-08 13:08:02 -0700
+Processing by StacksController#create as JSON
+  Parameters: {"title"=>"German", "stack"=>{"title"=>"German"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/stacks_controller.rb:13:in `create'
+  [1m[36mStack Create (0.3ms)[0m  [1m[32mINSERT INTO "stacks" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "German"], ["created_at", "2020-10-08 20:08:02.187634"], ["updated_at", "2020-10-08 20:08:02.187634"]]
+  ↳ app/controllers/stacks_controller.rb:13:in `create'
+  [1m[35m (7.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/stacks_controller.rb:13:in `create'
+Completed 200 OK in 15ms (Views: 0.8ms | ActiveRecord: 7.6ms | Allocations: 3416)
+
+
+Started GET "/stacks/1" for 127.0.0.1 at 2020-10-08 13:08:08 -0700
+Processing by StacksController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mStack Load (0.2ms)[0m  [1m[34mSELECT "stacks".* FROM "stacks" WHERE "stacks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stacks_controller.rb:8:in `show'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."stack_id" = ?[0m  [["stack_id", 1]]
+  ↳ app/controllers/stacks_controller.rb:9:in `show'
+Completed 200 OK in 3ms (Views: 1.4ms | ActiveRecord: 0.3ms | Allocations: 1588)
+
+
+Started POST "/cards" for 127.0.0.1 at 2020-10-08 13:08:39 -0700
+  
+AbstractController::ActionNotFound (The action 'create' could not be found for CardsController):
+  
+actionpack (6.0.3.3) lib/abstract_controller/base.rb:131:in `process'
+actionpack (6.0.3.3) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.3) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+activerecord (6.0.3.3) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.3) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/stacks" for 127.0.0.1 at 2020-10-08 13:09:10 -0700
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by StacksController#index as */*
+  [1m[36mStack Load (0.5ms)[0m  [1m[34mSELECT "stacks".* FROM "stacks"[0m
+  ↳ app/controllers/stacks_controller.rb:4:in `index'
+Completed 200 OK in 62ms (Views: 23.4ms | ActiveRecord: 3.2ms | Allocations: 5756)
+
+
+Started GET "/stacks/1" for 127.0.0.1 at 2020-10-08 13:09:11 -0700
+Processing by StacksController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mStack Load (0.3ms)[0m  [1m[34mSELECT "stacks".* FROM "stacks" WHERE "stacks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stacks_controller.rb:8:in `show'
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."stack_id" = ?[0m  [["stack_id", 1]]
+  ↳ app/controllers/stacks_controller.rb:9:in `show'
+Completed 200 OK in 19ms (Views: 12.8ms | ActiveRecord: 2.0ms | Allocations: 6286)
+
+
+Started POST "/cards" for 127.0.0.1 at 2020-10-08 13:10:09 -0700
+Processing by CardsController#create as JSON
+  Parameters: {"front"=>"Cat", "back"=>"Macska", "card"=>{"front"=>"Cat", "back"=>"Macska"}}
+Completed 204 No Content in 18761ms (ActiveRecord: 0.0ms | Allocations: 7076)
+
+
+Started GET "/stacks" for 127.0.0.1 at 2020-10-08 13:10:33 -0700
+Processing by StacksController#index as */*
+  [1m[36mStack Load (0.3ms)[0m  [1m[34mSELECT "stacks".* FROM "stacks"[0m
+  ↳ app/controllers/stacks_controller.rb:4:in `index'
+Completed 200 OK in 7ms (Views: 5.5ms | ActiveRecord: 0.3ms | Allocations: 1999)
+
+
+Started GET "/stacks/1" for 127.0.0.1 at 2020-10-08 13:10:35 -0700
+Processing by StacksController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mStack Load (0.3ms)[0m  [1m[34mSELECT "stacks".* FROM "stacks" WHERE "stacks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stacks_controller.rb:8:in `show'
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."stack_id" = ?[0m  [["stack_id", 1]]
+  ↳ app/controllers/stacks_controller.rb:9:in `show'
+Completed 200 OK in 5ms (Views: 2.3ms | ActiveRecord: 0.4ms | Allocations: 1587)
+
+
+Started POST "/cards" for 127.0.0.1 at 2020-10-08 13:10:42 -0700
+Processing by CardsController#create as JSON
+  Parameters: {"front"=>"Cat", "back"=>"Macska", "stack_id"=>"1", "card"=>{"front"=>"Cat", "back"=>"Macska", "stack_id"=>"1"}}
+  [1m[36mStack Load (0.2ms)[0m  [1m[34mSELECT "stacks".* FROM "stacks" WHERE "stacks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ (pry):9:in `create'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "cards" WHERE "cards"."stack_id" = ?[0m  [["stack_id", 1]]
+  ↳ (pry):11:in `create'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "cards" WHERE "cards"."stack_id" = ?[0m  [["stack_id", 1]]
+  ↳ (pry):13:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ (pry):14:in `create'
+  [1m[36mStack Load (0.1ms)[0m  [1m[34mSELECT "stacks".* FROM "stacks" WHERE "stacks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ (pry):14:in `create'
+  [1m[36mCard Create (0.4ms)[0m  [1m[32mINSERT INTO "cards" ("front", "back", "stack_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["front", "Cat"], ["back", "Macska"], ["stack_id", 1], ["created_at", "2020-10-08 20:13:55.839000"], ["updated_at", "2020-10-08 20:13:55.839000"]]
+  ↳ (pry):14:in `create'
+  [1m[35m (12.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ (pry):14:in `create'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "cards" WHERE "cards"."stack_id" = ?[0m  [["stack_id", 1]]
+  ↳ (pry):16:in `create'
+Completed 204 No Content in 313191ms (ActiveRecord: 13.7ms | Allocations: 43709)
+
+
+Started GET "/stacks" for 127.0.0.1 at 2020-10-08 13:16:22 -0700
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by StacksController#index as */*
+  [1m[36mStack Load (1.0ms)[0m  [1m[34mSELECT "stacks".* FROM "stacks"[0m
+  ↳ app/controllers/stacks_controller.rb:4:in `index'
+Completed 200 OK in 53ms (Views: 37.9ms | ActiveRecord: 5.6ms | Allocations: 5754)
+
+
+Started GET "/stacks/1" for 127.0.0.1 at 2020-10-08 13:16:24 -0700
+Processing by StacksController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mStack Load (0.5ms)[0m  [1m[34mSELECT "stacks".* FROM "stacks" WHERE "stacks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stacks_controller.rb:8:in `show'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."stack_id" = ?[0m  [["stack_id", 1]]
+  ↳ app/controllers/stacks_controller.rb:9:in `show'
+Completed 200 OK in 18ms (Views: 11.9ms | ActiveRecord: 1.8ms | Allocations: 6435)
+
+
+Started POST "/cards" for 127.0.0.1 at 2020-10-08 13:16:43 -0700
+Processing by CardsController#create as JSON
+  Parameters: {"front"=>"Apple", "back"=>"Alma", "stack_id"=>"1", "card"=>{"front"=>"Apple", "back"=>"Alma", "stack_id"=>"1"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/cards_controller.rb:8:in `create'
+  [1m[36mStack Load (0.2ms)[0m  [1m[34mSELECT "stacks".* FROM "stacks" WHERE "stacks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:8:in `create'
+  [1m[36mCard Create (0.5ms)[0m  [1m[32mINSERT INTO "cards" ("front", "back", "stack_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["front", "Apple"], ["back", "Alma"], ["stack_id", 1], ["created_at", "2020-10-08 20:16:43.998187"], ["updated_at", "2020-10-08 20:16:43.998187"]]
+  ↳ app/controllers/cards_controller.rb:8:in `create'
+  [1m[35m (7.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/cards_controller.rb:8:in `create'
+Completed 200 OK in 22ms (Views: 0.9ms | ActiveRecord: 8.4ms | Allocations: 5087)
+
+
+Started GET "/stacks" for 127.0.0.1 at 2020-10-08 13:17:53 -0700
+Processing by StacksController#index as */*
+  [1m[36mStack Load (0.3ms)[0m  [1m[34mSELECT "stacks".* FROM "stacks"[0m
+  ↳ app/controllers/stacks_controller.rb:4:in `index'
+Completed 200 OK in 12ms (Views: 10.9ms | ActiveRecord: 0.3ms | Allocations: 2000)
+
+
+Started GET "/stacks/1" for 127.0.0.1 at 2020-10-08 13:17:55 -0700
+Processing by StacksController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mStack Load (0.2ms)[0m  [1m[34mSELECT "stacks".* FROM "stacks" WHERE "stacks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stacks_controller.rb:8:in `show'
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."stack_id" = ?[0m  [["stack_id", 1]]
+  ↳ app/controllers/stacks_controller.rb:9:in `show'
+Completed 200 OK in 6ms (Views: 3.8ms | ActiveRecord: 0.4ms | Allocations: 1886)
+
+
+Started GET "/stacks" for 127.0.0.1 at 2020-10-08 13:17:59 -0700
+Processing by StacksController#index as */*
+  [1m[36mStack Load (0.3ms)[0m  [1m[34mSELECT "stacks".* FROM "stacks"[0m
+  ↳ app/controllers/stacks_controller.rb:4:in `index'
+Completed 200 OK in 21ms (Views: 20.5ms | ActiveRecord: 0.3ms | Allocations: 2000)
+
+
+Started GET "/stacks" for 127.0.0.1 at 2020-10-08 13:22:42 -0700
+Processing by StacksController#index as */*
+  [1m[36mStack Load (0.4ms)[0m  [1m[34mSELECT "stacks".* FROM "stacks"[0m
+  ↳ app/controllers/stacks_controller.rb:4:in `index'
+Completed 200 OK in 8ms (Views: 6.6ms | ActiveRecord: 0.4ms | Allocations: 2000)
+
+
+Started GET "/stacks/1" for 127.0.0.1 at 2020-10-08 13:22:46 -0700
+Processing by StacksController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mStack Load (0.2ms)[0m  [1m[34mSELECT "stacks".* FROM "stacks" WHERE "stacks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stacks_controller.rb:8:in `show'
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."stack_id" = ?[0m  [["stack_id", 1]]
+  ↳ app/controllers/stacks_controller.rb:9:in `show'
+Completed 200 OK in 10ms (Views: 5.7ms | ActiveRecord: 0.5ms | Allocations: 1886)
+
+
+Started GET "/stacks/1" for 127.0.0.1 at 2020-10-08 13:23:17 -0700
+Processing by StacksController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mStack Load (0.1ms)[0m  [1m[34mSELECT "stacks".* FROM "stacks" WHERE "stacks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stacks_controller.rb:8:in `show'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."stack_id" = ?[0m  [["stack_id", 1]]
+  ↳ app/controllers/stacks_controller.rb:9:in `show'
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.3ms | Allocations: 1886)
+
+
+Started GET "/stacks/1" for 127.0.0.1 at 2020-10-08 13:23:19 -0700
+Processing by StacksController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mStack Load (0.5ms)[0m  [1m[34mSELECT "stacks".* FROM "stacks" WHERE "stacks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stacks_controller.rb:8:in `show'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."stack_id" = ?[0m  [["stack_id", 1]]
+  ↳ app/controllers/stacks_controller.rb:9:in `show'
+Completed 200 OK in 5ms (Views: 1.7ms | ActiveRecord: 0.7ms | Allocations: 1886)
+
+
+Started GET "/stacks/1" for 127.0.0.1 at 2020-10-08 13:23:20 -0700
+Processing by StacksController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mStack Load (0.1ms)[0m  [1m[34mSELECT "stacks".* FROM "stacks" WHERE "stacks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stacks_controller.rb:8:in `show'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."stack_id" = ?[0m  [["stack_id", 1]]
+  ↳ app/controllers/stacks_controller.rb:9:in `show'
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.2ms | Allocations: 1886)
+
+
+Started GET "/stacks/1" for 127.0.0.1 at 2020-10-08 13:23:22 -0700
+Processing by StacksController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mStack Load (0.1ms)[0m  [1m[34mSELECT "stacks".* FROM "stacks" WHERE "stacks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stacks_controller.rb:8:in `show'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."stack_id" = ?[0m  [["stack_id", 1]]
+  ↳ app/controllers/stacks_controller.rb:9:in `show'
+Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 0.3ms | Allocations: 1886)
+
+
+Started GET "/stacks/1" for 127.0.0.1 at 2020-10-08 13:23:22 -0700
+Processing by StacksController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mStack Load (0.2ms)[0m  [1m[34mSELECT "stacks".* FROM "stacks" WHERE "stacks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stacks_controller.rb:8:in `show'
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."stack_id" = ?[0m  [["stack_id", 1]]
+  ↳ app/controllers/stacks_controller.rb:9:in `show'
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.3ms | Allocations: 1886)
+
+
+Started GET "/stacks/1" for 127.0.0.1 at 2020-10-08 13:23:31 -0700
+Processing by StacksController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mStack Load (0.1ms)[0m  [1m[34mSELECT "stacks".* FROM "stacks" WHERE "stacks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stacks_controller.rb:8:in `show'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."stack_id" = ?[0m  [["stack_id", 1]]
+  ↳ app/controllers/stacks_controller.rb:9:in `show'
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.3ms | Allocations: 1886)
+
+
+Started GET "/stacks" for 127.0.0.1 at 2020-10-08 13:25:13 -0700
+Processing by StacksController#index as */*
+  [1m[36mStack Load (0.3ms)[0m  [1m[34mSELECT "stacks".* FROM "stacks"[0m
+  ↳ app/controllers/stacks_controller.rb:4:in `index'
+Completed 200 OK in 10ms (Views: 9.0ms | ActiveRecord: 0.3ms | Allocations: 2000)
+
+
+Started GET "/stacks/1" for 127.0.0.1 at 2020-10-08 13:25:14 -0700
+Processing by StacksController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mStack Load (0.2ms)[0m  [1m[34mSELECT "stacks".* FROM "stacks" WHERE "stacks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stacks_controller.rb:8:in `show'
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."stack_id" = ?[0m  [["stack_id", 1]]
+  ↳ app/controllers/stacks_controller.rb:9:in `show'
+Completed 200 OK in 4ms (Views: 2.1ms | ActiveRecord: 0.3ms | Allocations: 1886)
+
+
+Started GET "/stacks" for 127.0.0.1 at 2020-10-08 13:25:24 -0700
+Processing by StacksController#index as */*
+  [1m[36mStack Load (0.4ms)[0m  [1m[34mSELECT "stacks".* FROM "stacks"[0m
+  ↳ app/controllers/stacks_controller.rb:4:in `index'
+Completed 200 OK in 18ms (Views: 16.9ms | ActiveRecord: 0.4ms | Allocations: 2000)
+
+
+Started GET "/stacks/1" for 127.0.0.1 at 2020-10-08 13:25:25 -0700
+Processing by StacksController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mStack Load (0.1ms)[0m  [1m[34mSELECT "stacks".* FROM "stacks" WHERE "stacks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stacks_controller.rb:8:in `show'
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."stack_id" = ?[0m  [["stack_id", 1]]
+  ↳ app/controllers/stacks_controller.rb:9:in `show'
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.3ms | Allocations: 1886)
+
+
+Started GET "/stacks" for 127.0.0.1 at 2020-10-08 13:25:34 -0700
+Processing by StacksController#index as */*
+  [1m[36mStack Load (0.4ms)[0m  [1m[34mSELECT "stacks".* FROM "stacks"[0m
+  ↳ app/controllers/stacks_controller.rb:4:in `index'
+Completed 200 OK in 9ms (Views: 7.1ms | ActiveRecord: 0.4ms | Allocations: 2000)
+
+
+Started GET "/stacks/1" for 127.0.0.1 at 2020-10-08 13:25:35 -0700
+Processing by StacksController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mStack Load (0.3ms)[0m  [1m[34mSELECT "stacks".* FROM "stacks" WHERE "stacks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stacks_controller.rb:8:in `show'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."stack_id" = ?[0m  [["stack_id", 1]]
+  ↳ app/controllers/stacks_controller.rb:9:in `show'
+Completed 200 OK in 5ms (Views: 2.0ms | ActiveRecord: 0.4ms | Allocations: 1886)
+
+
+Started GET "/stacks/1" for 127.0.0.1 at 2020-10-08 13:25:36 -0700
+Processing by StacksController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mStack Load (0.2ms)[0m  [1m[34mSELECT "stacks".* FROM "stacks" WHERE "stacks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stacks_controller.rb:8:in `show'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."stack_id" = ?[0m  [["stack_id", 1]]
+  ↳ app/controllers/stacks_controller.rb:9:in `show'
+Completed 200 OK in 5ms (Views: 2.9ms | ActiveRecord: 0.4ms | Allocations: 1886)
+
+
+Started GET "/stacks/1" for 127.0.0.1 at 2020-10-08 13:25:41 -0700
+Processing by StacksController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mStack Load (0.1ms)[0m  [1m[34mSELECT "stacks".* FROM "stacks" WHERE "stacks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stacks_controller.rb:8:in `show'
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."stack_id" = ?[0m  [["stack_id", 1]]
+  ↳ app/controllers/stacks_controller.rb:9:in `show'
+Completed 200 OK in 5ms (Views: 3.6ms | ActiveRecord: 0.4ms | Allocations: 1886)
+
+
+Started GET "/stacks" for 127.0.0.1 at 2020-10-08 13:26:28 -0700
+Processing by StacksController#index as */*
+  [1m[36mStack Load (0.2ms)[0m  [1m[34mSELECT "stacks".* FROM "stacks"[0m
+  ↳ app/controllers/stacks_controller.rb:4:in `index'
+Completed 200 OK in 7ms (Views: 6.6ms | ActiveRecord: 0.2ms | Allocations: 2000)
+
+
+Started GET "/stacks/1" for 127.0.0.1 at 2020-10-08 13:26:30 -0700
+Processing by StacksController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mStack Load (0.2ms)[0m  [1m[34mSELECT "stacks".* FROM "stacks" WHERE "stacks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stacks_controller.rb:8:in `show'
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."stack_id" = ?[0m  [["stack_id", 1]]
+  ↳ app/controllers/stacks_controller.rb:9:in `show'
+Completed 200 OK in 18ms (Views: 15.8ms | ActiveRecord: 0.3ms | Allocations: 1889)
+
+
+Started GET "/stacks" for 127.0.0.1 at 2020-10-08 13:27:01 -0700
+Processing by StacksController#index as */*
+  [1m[36mStack Load (0.3ms)[0m  [1m[34mSELECT "stacks".* FROM "stacks"[0m
+  ↳ app/controllers/stacks_controller.rb:4:in `index'
+Completed 200 OK in 14ms (Views: 13.0ms | ActiveRecord: 0.3ms | Allocations: 2000)
+
+
+Started GET "/stacks" for 127.0.0.1 at 2020-10-08 13:27:03 -0700
+Processing by StacksController#index as */*
+  [1m[36mStack Load (0.3ms)[0m  [1m[34mSELECT "stacks".* FROM "stacks"[0m
+  ↳ app/controllers/stacks_controller.rb:4:in `index'
+Completed 200 OK in 19ms (Views: 17.9ms | ActiveRecord: 0.3ms | Allocations: 2000)
+
+
+Started GET "/stacks/1" for 127.0.0.1 at 2020-10-08 13:27:05 -0700
+Processing by StacksController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mStack Load (0.2ms)[0m  [1m[34mSELECT "stacks".* FROM "stacks" WHERE "stacks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stacks_controller.rb:8:in `show'
+  [1m[36mCard Load (0.6ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."stack_id" = ?[0m  [["stack_id", 1]]
+  ↳ app/controllers/stacks_controller.rb:9:in `show'
+Completed 200 OK in 9ms (Views: 4.8ms | ActiveRecord: 0.9ms | Allocations: 1886)
+
+
+Started GET "/stacks" for 127.0.0.1 at 2020-10-08 13:28:00 -0700
+Processing by StacksController#index as */*
+  [1m[36mStack Load (0.4ms)[0m  [1m[34mSELECT "stacks".* FROM "stacks"[0m
+  ↳ app/controllers/stacks_controller.rb:4:in `index'
+Completed 200 OK in 18ms (Views: 17.0ms | ActiveRecord: 0.4ms | Allocations: 2000)
+
+
+Started GET "/stacks/1" for 127.0.0.1 at 2020-10-08 13:28:01 -0700
+Processing by StacksController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mStack Load (0.2ms)[0m  [1m[34mSELECT "stacks".* FROM "stacks" WHERE "stacks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stacks_controller.rb:8:in `show'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."stack_id" = ?[0m  [["stack_id", 1]]
+  ↳ app/controllers/stacks_controller.rb:9:in `show'
+Completed 200 OK in 4ms (Views: 2.4ms | ActiveRecord: 0.3ms | Allocations: 1886)
+
+
+Started POST "/cards" for 127.0.0.1 at 2020-10-08 13:28:25 -0700
+Processing by CardsController#create as JSON
+  Parameters: {"front"=>"If", "back"=>"Ha", "stack_id"=>"1", "card"=>{"front"=>"If", "back"=>"Ha", "stack_id"=>"1"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/cards_controller.rb:8:in `create'
+  [1m[36mStack Load (0.2ms)[0m  [1m[34mSELECT "stacks".* FROM "stacks" WHERE "stacks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:8:in `create'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("front", "back", "stack_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["front", "If"], ["back", "Ha"], ["stack_id", 1], ["created_at", "2020-10-08 20:28:25.905730"], ["updated_at", "2020-10-08 20:28:25.905730"]]
+  ↳ app/controllers/cards_controller.rb:8:in `create'
+  [1m[35m (10.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/cards_controller.rb:8:in `create'
+Completed 200 OK in 22ms (Views: 0.6ms | ActiveRecord: 10.7ms | Allocations: 4862)
+
+

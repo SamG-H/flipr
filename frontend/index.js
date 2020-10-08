@@ -39,7 +39,7 @@ function createStack(e){
 }
 
 function renderStackForm(){
-    const contentDiv = document.querySelector(".content");
+    const contentDiv = document.querySelector("#new-stack-form");
     const newStackForm = document.createElement("form");
     newStackForm.setAttribute('id', 'new-stack');
     newStackForm.innerHTML = '<h2>Create a new stack of flash cards</h2><div><label for="title">Title: </label><input id="title"></div><div><input type="submit" value="Create new stack"></div>';
@@ -70,7 +70,6 @@ function renderPreviousCard(e){
 }
 
 function createCard(e){
-    debugger;
     e.preventDefault();
     fetch('http://localhost:3000/cards', {
 	method: "POST",
@@ -82,7 +81,8 @@ function createCard(e){
 	
 	body: JSON.stringify({
 	    "front": front.value,
-	    "back": back.value
+	    "back": back.value,
+	    "stack_id": e.target.parentElement.id
 	})
     })
 	.then( (response) => response.json())
@@ -99,8 +99,8 @@ function renderCardForm(stackId){
     const stackDiv = document.getElementById(`${stackId}`);
     const cardForm = document.createElement('form');
     cardForm.innerHTML = '<h3>Add a new card to this stack</h3><div><label for="front">Front of card: </label><input id="front" /></div><div><label for="back">Back of card: </label><input id="back" /></div><div><input type="submit" value="Add card to stack" /></div>';
-    stackDiv.appendChild(cardForm);
     cardForm.addEventListener("submit", createCard);
+    stackDiv.appendChild(cardForm);
 }
 
 function renderCards(cards){
@@ -109,9 +109,13 @@ function renderCards(cards){
     })
 }
 function renderCard(card){
-    const grid = document.querySelector(".content");
-    const cardDiv = document.getElementById(`${card.stack_id}`)
-    cardDiv.removeChild(cardDiv.lastChild);
+    const grid = document.querySelector("#stacks");
+    const cardDiv = document.getElementById(`${card.stack_id}`);
+    const stackBtn = document.getElementById(`${card.stack_id} btn`);
+    if(stackBtn){
+	stackBtn.remove();
+    }
+    //stackBtn.innerText = "Hide this stack"; maybe change eventListener on this button instead of removing
     const front = document.createElement('p');
     const back = document.createElement('p');
     const nextBtn = document.createElement('button');
@@ -137,9 +141,10 @@ function renderStacks(stacks){
 }
 
 function renderStack(stack){
-    const grid = document.querySelector(".content");
+    const grid = document.querySelector("#stacks");
     const stackDiv = document.createElement('div');
     const viewBtn = document.createElement('button');
+    viewBtn.setAttribute('id', `${stack.id} btn`);
     viewBtn.innerText = "Check this stack out!";
     stackDiv.setAttribute('id', `${stack.id}`);
     viewBtn.addEventListener("click", getCards);
@@ -156,12 +161,12 @@ function getCards(e){
 	.then(r => r.json())
 	.then(cards => {
 	    renderCards(cards);
+	    renderCardForm(stackId);
 	})
-    renderCardForm(stackId);
 }
 
 function clearScreen(){
-    removeAllChildNodes(document.querySelector(".content"));
+    removeAllChildNodes(document.querySelector("#stacks"));
     removeAllChildNodes(document.querySelector("#flipr-intro"));
 }
 
