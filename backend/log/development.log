@@ -3011,3 +3011,61 @@ Processing by CardsController#create as JSON
 Completed 200 OK in 36ms (Views: 0.9ms | ActiveRecord: 6.0ms | Allocations: 8919)
 
 
+Started GET "/stacks" for 127.0.0.1 at 2020-10-08 13:51:36 -0700
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by StacksController#index as */*
+  [1m[36mStack Load (0.4ms)[0m  [1m[34mSELECT "stacks".* FROM "stacks"[0m
+  ↳ app/controllers/stacks_controller.rb:4:in `index'
+Completed 200 OK in 8ms (Views: 6.7ms | ActiveRecord: 0.4ms | Allocations: 2016)
+
+
+Started GET "/stacks/1" for 127.0.0.1 at 2020-10-08 13:51:37 -0700
+Processing by StacksController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mStack Load (0.2ms)[0m  [1m[34mSELECT "stacks".* FROM "stacks" WHERE "stacks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stacks_controller.rb:8:in `show'
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."stack_id" = ?[0m  [["stack_id", 1]]
+  ↳ app/controllers/stacks_controller.rb:9:in `show'
+Completed 200 OK in 6ms (Views: 4.0ms | ActiveRecord: 0.5ms | Allocations: 2074)
+
+
+Started GET "/stacks" for 127.0.0.1 at 2020-10-08 13:59:40 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by StacksController#index as */*
+  [1m[36mStack Load (0.9ms)[0m  [1m[34mSELECT "stacks".* FROM "stacks"[0m
+  ↳ app/controllers/stacks_controller.rb:4:in `index'
+Completed 200 OK in 11ms (Views: 9.5ms | ActiveRecord: 0.9ms | Allocations: 2016)
+
+
+Started GET "/stacks/1" for 127.0.0.1 at 2020-10-08 13:59:42 -0700
+Processing by StacksController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mStack Load (0.3ms)[0m  [1m[34mSELECT "stacks".* FROM "stacks" WHERE "stacks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stacks_controller.rb:8:in `show'
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."stack_id" = ?[0m  [["stack_id", 1]]
+  ↳ app/controllers/stacks_controller.rb:9:in `show'
+Completed 200 OK in 7ms (Views: 3.8ms | ActiveRecord: 0.7ms | Allocations: 2066)
+
+
+Started GET "/stacks" for 127.0.0.1 at 2020-10-08 14:08:26 -0700
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by StacksController#index as */*
+  [1m[36mStack Load (0.4ms)[0m  [1m[34mSELECT "stacks".* FROM "stacks"[0m
+  ↳ app/controllers/stacks_controller.rb:4:in `index'
+Completed 200 OK in 10ms (Views: 9.2ms | ActiveRecord: 0.4ms | Allocations: 2016)
+
+
+Started GET "/stacks" for 127.0.0.1 at 2020-10-08 14:08:49 -0700
+Processing by StacksController#index as */*
+  [1m[36mStack Load (0.6ms)[0m  [1m[34mSELECT "stacks".* FROM "stacks"[0m
+  ↳ app/controllers/stacks_controller.rb:4:in `index'
+Completed 200 OK in 8ms (Views: 6.4ms | ActiveRecord: 0.6ms | Allocations: 2008)
+
+
+Started GET "/stacks" for 127.0.0.1 at 2020-10-08 14:08:49 -0700
+Processing by StacksController#index as */*
+  [1m[36mStack Load (0.2ms)[0m  [1m[34mSELECT "stacks".* FROM "stacks"[0m
+  ↳ app/controllers/stacks_controller.rb:4:in `index'
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.2ms | Allocations: 2000)
+
+
