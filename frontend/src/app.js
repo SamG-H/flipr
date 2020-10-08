@@ -1,20 +1,27 @@
 class App {
     constructor() {
-	this.stacks = {};
+	this.stacks = [];
 	fetch('http://localhost:3000/stacks')
 	    .then(r => r.json())
-	    .then(stacks => {
-		this.addStacks(stacks);
+	    .then(info => {
+		this.addStacks(info);
 	    })
     }
 
-    addStacks(stacks){
-	stacks.forEach((stack) => {
+    addStacks(info){
+	info.data.forEach((stack) => {
 	    this.addStack(stack);
 	})
+	this.displayStacks();
     }
 
     addStack(stack){
 	this.stacks[stack.id] = new Stack(stack);
+    }
+
+    displayStacks(){
+	this.stacks.forEach((stack) => {
+	    stack.display();
+	})
     }
 }

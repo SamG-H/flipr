@@ -1,5 +1,5 @@
 const app = new App();
-
+/*
 renderHome();
 
 function renderCardForm(stackId){
@@ -179,3 +179,4 @@ function getCards(e){
 	    renderCardForm(stackId);
 	})
 }
+*/
