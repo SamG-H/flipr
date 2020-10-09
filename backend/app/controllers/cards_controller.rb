@@ -1,4 +1,9 @@
 class CardsController < ApplicationController
+  def index
+    stack = Stack.find(params[:stack_id])
+    render json: CardSerializer.new(stack.cards)
+  end
+  
   def show
     card = Card.find(params[:id])
     render json: CardSerializer.new(card)
