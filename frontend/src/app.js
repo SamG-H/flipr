@@ -16,7 +16,7 @@ class App {
     }
 
     addStack(stack){
-	this.stacks[stack.id] = new Stack(stack);
+	return this.stacks[stack.id] = new Stack(stack);
     }
 
     displayStacks(){
@@ -24,4 +24,25 @@ class App {
 	    stack.display();
 	})
     }
+
+    createStack(e){
+	e.preventDefault();
+	fetch('http://localhost:3000/stacks', {
+	    method: "POST",
+	    headers:
+	    {
+		"Content-Type": "application/json",
+		Accept: "application/json"
+	    },
+	    body: JSON.stringify({
+		"title": title.value
+	    })
+	})
+	    .then( (response) => response.json())
+	    .then( (info) => {
+		this.addStack(info.data).display();
+		e.target.reset();
+	    })
+    }
+
 }
