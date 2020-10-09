@@ -24,8 +24,4 @@ class App {
 	    stack.display();
 	})
     }
-
-    getCards(){
-	
-    }
 }
