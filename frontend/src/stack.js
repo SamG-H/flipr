@@ -28,11 +28,48 @@ class Stack {
 		this.cards.forEach((card) => {
 		    card.display(this);
 		})
+		const viewBtn = document.getElementById(`${this.id} btn`);
+		viewBtn.remove();
+		this.renderCardForm();
 	    })
     }
 
-    addCard(card){
-	this.cards.push(new Card(card));
+    renderCardForm(){
+	const stackDiv = document.getElementById(`stack-${this.id}`);
+	const cardForm = document.createElement('form');
+	cardForm.innerHTML = '<h3>Add a new card to this stack</h3><div><label for="front">Front of card: </label><input id="front" /></div><div><label for="back">Back of card: </label><input id="back" /></div><div><input type="submit" value="Add card to stack" /></div>';
+	cardForm.addEventListener("submit", (e) => {this.createCard(e)});
+	stackDiv.appendChild(cardForm);
+    }
+
+    createCard(e){
+	e.preventDefault();
+	fetch(`http://localhost:3000/stacks/${this.id}/cards`, {
+	    method: "POST",
+	    headers:
+	    {
+		"Content-Type": "application/json",
+		Accept: "application/json"
+	    },
+	    body: JSON.stringify({
+		"front": front.value,
+		"back": back.value,
+		"stack_id": this.id
+	    })
+	})
+	    .then( (response) => response.json())
+	    .then( (info) => {
+		this.addCard(info.data).display(this);
+		e.target.reset();
+	    })
+
+    }
+
+
+    addCard(cardInfo){
+	const card = new Card(cardInfo);
+	this.cards.push(card);
+	return card;
     }
 
     addCards(info){
