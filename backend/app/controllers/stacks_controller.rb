@@ -17,10 +17,7 @@ class StacksController < ApplicationController
   
   def create
     stack = Stack.create(stack_params)
-    options = {
-      include: [:cards]
-    }
-    render json: StackSerializer.new(stack, options)
+    render json: StackSerializer.new(stack)
   end
 
   private

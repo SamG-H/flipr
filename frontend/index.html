@@ -7,11 +7,20 @@
 <body>
   <h1 id="home">flipr</h1>
   <div id="flipr-intro">
+    <p>flipr is a collection of flashcard stacks created by fliprs like you. Go ahead and checkout a stack of flashcards if the title peeks your interest or <a href="#new-stack-form">create your own stack!</a></p>
   </div>
   <div id="stacks">
   </div>
-  <div id="new-stack-form">
-  </div>
+  <form id="new-stack-form">
+    <h2>Create a new stack of flash cards</h2>
+    <div>
+      <label for="title">Title: </label>
+      <input id="title">
+    </div>
+    <div>
+      <input type="submit" value="Create new stack">
+    </div>
+  </form>
   <script src="src/stack.js"></script>
   <script src="src/card.js"></script>
   <script src="src/app.js"></script>
