@@ -37,6 +37,7 @@ class Stack {
     renderCardForm(){
 	const stackDiv = document.getElementById(`stack-${this.id}`);
 	const cardForm = document.createElement('form');
+	cardForm.setAttribute('id', `new-card-form-${this.id}`);
 	cardForm.innerHTML = '<h3>Add a new card to this stack</h3><div><label for="front">Front of card: </label><input id="front" /></div><div><label for="back">Back of card: </label><input id="back" /></div><div><input type="submit" value="Add card to stack" /></div>';
 	cardForm.addEventListener("submit", (e) => {this.createCard(e)});
 	stackDiv.appendChild(cardForm);
@@ -59,10 +60,16 @@ class Stack {
 	})
 	    .then( (response) => response.json())
 	    .then( (info) => {
+		this.removeCardForm();
 		this.addCard(info.data).display(this);
+		this.renderCardForm();
 		e.target.reset();
 	    })
+    }
 
+    removeCardForm(){
+	const cardForm = document.getElementById(`new-card-form-${this.id}`);
+	cardForm.remove();
     }
 
 
