@@ -13,12 +13,16 @@ class Card{
 	const back = document.createElement('p');
 	front.innerText = `front: ${this.front}`;
 	back.innerText = `back: ${this.back}`;
+	back.style.fontWeight = 'bold';
 	back.style.display = 'none';
 	cardDiv.appendChild(front);
 	cardDiv.appendChild(back);
 	cardDiv.addEventListener("click", (e) =>{
-	    back.style.display = 'block';
-	    back.style.fontWeight = 'bold';
+	    if(back.style.display === 'none'){
+		back.style.display = 'block';
+	    }else{
+		back.style.display = 'none';
+	    }
 	})
 	stackDiv.appendChild(cardDiv);
     }
