@@ -39,31 +39,29 @@ class Stack {
 	const cardForm = document.createElement('form');
 	cardForm.setAttribute('id', `new-card-form-${this.id}`);
 	cardForm.innerHTML = '<h3>Add a new card to this stack</h3><div><label for="front">Front of card: </label><input id="front" /></div><div><label for="back">Back of card: </label><input id="back" /></div><div><input type="submit" value="Add card to stack" /></div>';
-	cardForm.addEventListener("submit", (e) => {this.createCard(e)});
 	stackDiv.appendChild(cardForm);
+	cardForm.addEventListener("submit", (e) => {this.createCard(e)});
     }
 
     createCard(e){
-	e.preventDefault();
-	fetch(`http://localhost:3000/stacks/${this.id}/cards`, {
-	    method: "POST",
-	    headers:
-	    {
-		"Content-Type": "application/json",
-		Accept: "application/json"
-	    },
-	    body: JSON.stringify({
-		"front": front.value,
-		"back": back.value,
-		"stack_id": this.id
+		e.preventDefault();
+		fetch(`http://localhost:3000/stacks/${this.id}/cards`, {
+	    	method: "POST",
+	    	headers: {
+			"Content-Type": "application/json",
+			Accept: "application/json"
+	   	},
+	   	 body: JSON.stringify({
+			"front": e.target.front.value,
+			"back": e.target.back.value,
+			"stack_id": this.id
 	    })
 	})
 	    .then( (response) => response.json())
 	    .then( (info) => {
-		this.removeCardForm();
 		this.addCard(info.data).display(this);
+		this.removeCardForm();
 		this.renderCardForm();
-		e.target.reset();
 	    })
     }
 

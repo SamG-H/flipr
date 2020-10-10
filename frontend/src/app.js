@@ -35,7 +35,7 @@ class App {
 		Accept: "application/json"
 	    },
 	    body: JSON.stringify({
-		"title": title.value
+		"title": e.target.title.value
 	    })
 	})
 	    .then( (response) => response.json())
