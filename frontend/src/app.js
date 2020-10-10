@@ -40,8 +40,12 @@ class App {
 	})
 	    .then( (response) => response.json())
 	    .then( (info) => {
-		this.addStack(info.data).display();
-		e.target.reset();
+		if(info.data.id){
+			this.addStack(info.data).display();
+			e.target.reset();
+		} else{
+			alert('Your stack needs a title!');
+		}
 	    })
     }
 
