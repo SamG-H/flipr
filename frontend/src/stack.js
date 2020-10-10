@@ -82,39 +82,8 @@ class Stack {
     }
 
     addCards(info){
-	info.data.forEach((card) => {
-	    this.addCard(card);
-	})
-			   
-	//this.cards[0].display(this);
-	//this.addBtns(this.cards[0].id);
+		info.data.forEach((card) => {
+	    	this.addCard(card);
+		})
     }
-
-/*    addBtns(currentCardId){
-	const cardDiv = document.getElementById(`${currentCardId}`);
-	const nextBtn = document.createElement('button');
-	const prevBtn = document.createElement('button');
-	nextBtn.innerText = "->";
-	prevBtn.innerText = "<-";
-	prevBtn.addEventListener("click", (e) => {this.renderPreviousCard(e)});
-	nextBtn.addEventListener("click", (e) => {this.renderNextCard(e)});
-	cardDiv.appendChild(prevBtn);
-	cardDiv.appendChild(nextBtn);
-    }
-    
-    renderNextCard(e){
-	const prevCardId = parseInt(e.target.parentElement.id);
-	e.target.parentElement.remove();
-	let newCardId = prevCardId + 1;
-	this.cards[newCardId].display(this);
-	this.addBtns(newCardId);
-    }
-
-    renderPreviousCard(e){
-	let prevCardId = parseInt(e.target.parentElement.id);
-	e.target.parentElement.remove();
-	let newCardId = prevCardId - 1;
-	this.cards[newCardId].display(this);
-	this.addBtns(newCardId);
-    }*/
 }
