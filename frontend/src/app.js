@@ -4,7 +4,7 @@ class App {
 	fetch('http://localhost:3000/stacks')
 	    .then(r => r.json())
 	    .then(info => {
-		this.addStacks(info);
+			this.addStacks(info);
 	    })
     }
 
@@ -16,13 +16,13 @@ class App {
     }
 
     addStack(stack){
-	return this.stacks[stack.id] = new Stack(stack);
+		return this.stacks[stack.id] = new Stack(stack);
     }
 
     displayStacks(){
-	this.stacks.forEach((stack) => {
-	    stack.display();
-	})
+		this.stacks.forEach((stack) => {
+	   		stack.display();
+		})
     }
 
     createStack(e){

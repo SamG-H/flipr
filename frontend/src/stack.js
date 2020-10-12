@@ -1,7 +1,7 @@
 class Stack {
     constructor({id, attributes: {title}}){
 		this.id = id;
-		this.title = title
+		this.title = title;
 		this.cards = [];
 		this.div = document.createElement('div');
 		this.div.setAttribute('id', `stack-${this.id}`);
