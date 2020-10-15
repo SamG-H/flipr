@@ -4,11 +4,24 @@
 
 .flex-grid {
     display: flex;
+    flex-wrap: wrap;
 }
-.col {
-    margin: 10px;
+
+.stack {
     text-align: center;
-    flex-grow: 1;
-    flex-shrink: 1;
-    width: 32%;
+    margin: 5px;
+    background-color: #222222;
+    color: white;
+    flex: 1 100%;
+    cursor: pointer;
+}
+
+.card {
+    margin: auto;
+    flex: 1;
+    width: 50%;
+    padding: 2px;
+    display: flex;
+    background-color: white;
+    color: #222222;
 }

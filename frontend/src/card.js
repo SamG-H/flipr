@@ -1,31 +1,36 @@
 class Card{
     constructor({id, attributes: {front, back}}){
-		this.front = front;
-		this.back = back;
-		this.id = id;
+	this.front = front;
+	this.back = back;
+	this.id = id;
     }
 
     display(stack){
-		const stackDiv = document.getElementById(`stack-${stack.id}`);
-		const cardDiv = document.createElement('div');
-		cardDiv.setAttribute('id', `${this.id}`);
-		cardDiv.setAttribute('class', 'card');
-		cardDiv.style.display = 'block';
-		const front = document.createElement('p');
-		const back = document.createElement('p');
-		front.innerText = `front: ${this.front}`;
-		back.innerText = `back: ${this.back}`;
-		back.style.fontWeight = 'bold';
-		back.style.display = 'none';
-		cardDiv.appendChild(front);
-		cardDiv.appendChild(back);
-		cardDiv.addEventListener("click", (e) =>{
-			if(back.style.display === 'none'){
-			back.style.display = 'block';
-			}else{
-			back.style.display = 'none';
-			}
-		})
-		stackDiv.appendChild(cardDiv);
-	}
+	const stackDiv = document.getElementById(`stack-${stack.id}`);
+	const cardDiv = document.createElement('div');
+	cardDiv.setAttribute('id', `${this.id}`);
+	cardDiv.setAttribute('class', 'card');
+	cardDiv.style.cursor = 'pointer';
+	cardDiv.style.display = 'block';
+	const frontCard = document.createElement('div');
+	const backCard = document.createElement('div');
+	const frontText = document.createElement('p');
+	const backText = document.createElement('p');
+	frontText.innerText = `front: ${this.front}`;
+	backText.innerText = `back: ${this.back}`;
+	backCard.style.fontWeight = 'bold';
+	backCard.style.display = 'none';
+	frontCard.appendChild(frontText);
+	backCard.appendChild(backText);
+	cardDiv.appendChild(frontCard);
+	cardDiv.appendChild(backCard);
+	cardDiv.addEventListener("click", (e) =>{
+	    if(backCard.style.display === 'none'){
+		backCard.style.display = 'block';
+	    }else{
+		backCard.style.display = 'none';
+	    }
+	})
+	stackDiv.appendChild(cardDiv);
+    }
 }
