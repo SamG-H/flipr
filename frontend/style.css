@@ -2,26 +2,43 @@
     text-align: center;
 }
 
-.flex-grid {
-    display: flex;
-    flex-wrap: wrap;
-}
-
 .stack {
+    display: grid;
     text-align: center;
-    margin: 5px;
     background-color: #222222;
     color: white;
-    flex: 1 100%;
-    cursor: pointer;
+    margin: 10px;
 }
 
+.cardsDiv {
+    display: grid;
+    grid-column-gap: 5px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    /*grid-template-rows: 1fr 1fr 1fr 1fr 1fr;*/
+    grid-gap: 10px;
+}
 .card {
     margin: auto;
-    flex: 1;
-    width: 50%;
+    height: 100%;
+    width: 90%;
     padding: 2px;
-    display: flex;
+    display: grid;
     background-color: white;
     color: #222222;
+}
+
+.card:hover {
+    background-color: #86e2e6;
+}
+
+.card:onclick {
+    background-color: deeppink;
+}
+
+.button {
+    background-color: aquamarine;
+    height: 50px;
+    width: 200px;
+    margin: auto;
+    margin-bottom: 10px;
 }

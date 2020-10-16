@@ -11,14 +11,18 @@ class Stack {
     display(){
 	const grid = document.querySelector("#stacks");
 	const viewBtn = document.createElement('button');
-	viewBtn.setAttribute('class', 'stack-button');
+	viewBtn.setAttribute('class', 'button');
 	viewBtn.setAttribute('id', `${this.id} btn`);
 	viewBtn.innerText = "Check this stack out!";
 	viewBtn.addEventListener("click", (e) => this.fetchCards(e));
 	const title = document.createElement('h2');
+	const cardsDiv = document.createElement('div');
+	cardsDiv.setAttribute('class', 'cardsDiv');
+	cardsDiv.setAttribute('id', `cards-${this.id}`);
 	title.innerText = this.title;
 	this.div.appendChild(title);
 	grid.appendChild(this.div);
+	this.div.appendChild(cardsDiv);
 	this.div.appendChild(viewBtn);
     }
 
@@ -40,21 +44,22 @@ class Stack {
     renderToggleBtn(){
 	const toggleBtn = document.createElement('button');
 	toggleBtn.setAttribute('id', `${this.id} btn`);
+	toggleBtn.setAttribute('class', 'button');
 	toggleBtn.innerText = "Hide this stack!";
 	toggleBtn.addEventListener("click", (e) => {
 	    const cards = this.div.querySelectorAll('.card');
 	    const newCardForm = this.div.querySelector('form');
-	    if(newCardForm.style.display === 'block'){
+	    if(newCardForm.style.display === 'grid'){
 		newCardForm.style.display = 'none';
 		cards.forEach(card => {
 		    toggleBtn.innerText = "Check this stack out!";
 		    card.style.display = 'none';
 		})
 	    }else {
-		newCardForm.style.display = 'block';
+		newCardForm.style.display = 'grid';
 		cards.forEach(card => {
 		    toggleBtn.innerText = "Hide this stack!";
-		    card.style.display = 'block';
+		    card.style.display = 'grid';
 		})
 	    }
 	})
@@ -65,7 +70,7 @@ class Stack {
 	const stackDiv = document.getElementById(`stack-${this.id}`);
 	const cardForm = document.createElement('form');
 	cardForm.setAttribute('id', `new-card-form-${this.id}`);
-	cardForm.style.display = 'block';
+	cardForm.style.display = 'grid';
 	cardForm.innerHTML = '<h3>Add a new card to this stack</h3><div><label for="front">Front of card: </label><input id="front" required/></div><div><label for="back">Back of card: </label><input id="back"  required/></div><div><input type="submit" value="Add card to stack" /></div>';
 	stackDiv.appendChild(cardForm);
 	cardForm.addEventListener("submit", (e) => {this.createCard(e)});
