@@ -1,12 +1,13 @@
-.title {
-    text-align: center;
+body {
+    background-color: white;
+    height: 100%;
 }
 
 .stack {
     display: grid;
     text-align: center;
-    background-color: #222222;
-    color: white;
+    background-color: white;
+    color: black;
     margin: 10px;
 }
 
@@ -23,22 +24,50 @@
     width: 90%;
     padding: 2px;
     display: grid;
-    background-color: white;
-    color: #222222;
+    background-color: #eeeeee;
+}
+
+.clicked-card {
+    margin: auto;
+    height: 100%;
+    width: 90%;
+    padding: 2px;
+    display: grid;
+    background-color: #7fe0f8;
 }
 
 .card:hover {
-    background-color: #86e2e6;
-}
-
-.card:onclick {
-    background-color: deeppink;
+    background-color: #7fe0f8;
 }
 
 .button {
-    background-color: aquamarine;
+    background-color: #9cebff;
     height: 50px;
     width: 200px;
     margin: auto;
     margin-bottom: 10px;
 }
+
+.title {
+    text-align: center;
+    background-image:
+      linear-gradient(180deg, white 3rem, #F0A4A4 calc(3rem), #F0A4A4 calc(3rem + 2px), transparent 1px),
+      repeating-linear-gradient(0deg, transparent, transparent 1.5rem, #DDD 1px, #DDD calc(1.5rem + 1px));
+    box-shadow: 1px 1px 3px rgba(0,0,0,.25);
+    height: 14rem;
+    width: 400px;
+  
+    margin: auto;
+    position: relative;
+    top: 11%;
+    transform: translateY(-50%);
+  }
+  #intro {
+      margin-top: -12px;
+      font-size: 22px;
+  }
+
+  #new-stack-form {
+      text-align: center;
+      margin: auto;
+  }
