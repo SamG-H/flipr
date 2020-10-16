@@ -26,7 +26,7 @@ class Card{
 	cardDiv.appendChild(backCard);
 	cardDiv.addEventListener("click", (e) =>{
 	    if(backCard.style.display === 'none'){
-			cardDiv.setAttribute('class', 'clicked-card');
+			cardDiv.classList.add('clicked');
 		backCard.style.display = 'grid';
 		frontCard.style.display = 'none';
 	    }else{
