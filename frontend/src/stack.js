@@ -51,14 +51,14 @@ class Stack {
 	    const newCardForm = this.div.querySelector('form');
 	    if(newCardForm.style.display === 'grid'){
 		newCardForm.style.display = 'none';
+		toggleBtn.innerText = "Check this stack out!";
 		cards.forEach(card => {
-		    toggleBtn.innerText = "Check this stack out!";
 		    card.style.display = 'none';
 		})
 	    }else {
 		newCardForm.style.display = 'grid';
+		toggleBtn.innerText = "Hide this stack!";
 		cards.forEach(card => {
-		    toggleBtn.innerText = "Hide this stack!";
 		    card.style.display = 'grid';
 		})
 	    }
