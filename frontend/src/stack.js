@@ -1,82 +1,82 @@
 class Stack {
     constructor({id, attributes: {title}}){
-	this.id = id;
-	this.title = title;
-	this.cards = [];
-	this.div = document.createElement('div');
-	this.div.setAttribute('id', `stack-${this.id}`);
-	this.div.setAttribute('class', 'stack');
+		this.id = id;
+		this.title = title;
+		this.cards = [];
+		this.div = document.createElement('div');
+		this.div.setAttribute('id', `stack-${this.id}`);
+		this.div.setAttribute('class', 'stack');
     }
     
     display(){
-	const grid = document.querySelector("#stacks");
-	const viewBtn = document.createElement('button');
-	viewBtn.setAttribute('class', 'button');
-	viewBtn.setAttribute('id', `${this.id} btn`);
-	viewBtn.innerText = "Check this stack out!";
-	viewBtn.addEventListener("click", (e) => this.fetchCards(e));
-	const title = document.createElement('h2');
-	const cardsDiv = document.createElement('div');
-	cardsDiv.setAttribute('class', 'cardsDiv');
-	cardsDiv.setAttribute('id', `cards-${this.id}`);
-	title.innerText = this.title;
-	this.div.appendChild(title);
-	grid.appendChild(this.div);
-	this.div.appendChild(cardsDiv);
-	this.div.appendChild(viewBtn);
+		const grid = document.querySelector("#stacks");
+		const viewBtn = document.createElement('button');
+		viewBtn.setAttribute('class', 'button');
+		viewBtn.setAttribute('id', `${this.id} btn`);
+		viewBtn.innerText = "Check this stack out!";
+		viewBtn.addEventListener("click", (e) => this.fetchCards(e));
+		const title = document.createElement('h2');
+		const cardsDiv = document.createElement('div');
+		cardsDiv.setAttribute('class', 'cardsDiv');
+		cardsDiv.setAttribute('id', `cards-${this.id}`);
+		title.innerText = this.title;
+		this.div.appendChild(title);
+		grid.appendChild(this.div);
+		this.div.appendChild(cardsDiv);
+		this.div.appendChild(viewBtn);
     }
 
     fetchCards(e){
 	fetch(`http://localhost:3000/stacks/${this.id}/cards`)
 	    .then(r => r.json())
 	    .then(info => {
-		this.addCards(info);
-		this.cards.forEach((card) => {
-		    card.display(this);
-		})
-		const viewBtn = document.getElementById(`${this.id} btn`);
-		viewBtn.remove();
-		this.renderCardForm();
-		this.renderToggleBtn();
+			this.addCards(info);
+			this.cards.forEach((card) => {
+		    	card.display(this);
+			})
+			const viewBtn = document.getElementById(`${this.id} btn`);
+			viewBtn.remove();
+			this.renderCardForm();
+			this.renderToggleBtn();
 	    })
     }
     
     renderToggleBtn(){
-	const toggleBtn = document.createElement('button');
-	toggleBtn.setAttribute('id', `${this.id} btn`);
-	toggleBtn.setAttribute('class', 'button');
-	toggleBtn.innerText = "Hide this stack!";
-	toggleBtn.addEventListener("click", (e) => {
-	    const cards = this.div.querySelectorAll('.card');
-	    const newCardForm = this.div.querySelector('form');
-	    if(newCardForm.style.display === 'grid'){
-		newCardForm.style.display = 'none';
-		toggleBtn.innerText = "Check this stack out!";
-		cards.forEach(card => {
-		    card.style.display = 'none';
-		})
-	    }else {
-		newCardForm.style.display = 'grid';
+		const toggleBtn = document.createElement('button');
+		toggleBtn.setAttribute('id', `${this.id} btn`);
+		toggleBtn.setAttribute('class', 'button');
 		toggleBtn.innerText = "Hide this stack!";
-		cards.forEach(card => {
-		    card.style.display = 'grid';
+		toggleBtn.addEventListener("click", (e) => {
+			const cards = this.div.querySelectorAll('.card');
+			const newCardForm = this.div.querySelector('form');
+			if(newCardForm.style.display === 'grid') {
+				newCardForm.style.display = 'none';
+				toggleBtn.innerText = "Check this stack out!";
+				cards.forEach(card => {
+					card.style.display = 'none';
+				})
+			}else {
+				newCardForm.style.display = 'grid';
+				toggleBtn.innerText = "Hide this stack!";
+				cards.forEach(card => {
+					card.style.display = 'grid';
+				})
+			}
 		})
-	    }
-	})
-	this.div.insertBefore(toggleBtn, this.div.children[1]);
+		this.div.insertBefore(toggleBtn, this.div.children[1]);
     }
 
     renderCardForm(){
-	const stackDiv = document.getElementById(`stack-${this.id}`);
-	const cardForm = document.createElement('form');
-	cardForm.setAttribute('id', `new-card-form-${this.id}`);
-	cardForm.style.display = 'grid';
-	cardForm.innerHTML = '<h3>Add a new card to this stack</h3><div><label for="front">Front of card: </label><input id="front" required/></div><div><label for="back">Back of card: </label><input id="back"  required/></div><div><input type="submit" value="Add card to stack" /></div>';
-	stackDiv.appendChild(cardForm);
-	cardForm.addEventListener("submit", (e) => {this.createCard(e)});
+		const stackDiv = document.getElementById(`stack-${this.id}`);
+		const cardForm = document.createElement('form');
+		cardForm.setAttribute('id', `new-card-form-${this.id}`);
+		cardForm.style.display = 'grid';
+		cardForm.innerHTML = '<h3>Add a new card to this stack</h3><div><label for="front">Front of card: </label><input id="front" required/></div><div><label for="back">Back of card: </label><input id="back"  required/></div><div><input type="submit" value="Add card to stack" /></div>';
+		stackDiv.appendChild(cardForm);
+		cardForm.addEventListener("submit",this.createCard);
     }
 
-    createCard(e){
+    createCard = (e) => {
 	e.preventDefault();
 	fetch(`http://localhost:3000/stacks/${this.id}/cards`, {
 	    method: "POST",
@@ -92,15 +92,15 @@ class Stack {
 	})
 	    .then( (response) => response.json())
 	    .then( (info) => {
-		if(info.data.id){
-		    this.addCard(info.data).display(this);
-		    this.removeCardForm();
-		    this.renderCardForm();
-		} else{
-		    alert('You need a front and back on new cards!');
-		}
+			if(info.data.id){
+				this.addCard(info.data).display(this);
+				this.removeCardForm();
+				this.renderCardForm();
+			} else{
+				alert('You need a front and back on new cards!');
+			}
 	    })
-    }
+	}
 
     removeCardForm(){
 	const cardForm = document.getElementById(`new-card-form-${this.id}`);

@@ -13,27 +13,35 @@ body {
 
 .cardsDiv {
     display: grid;
-    grid-column-gap: 5px;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    /*grid-template-rows: 1fr 1fr 1fr 1fr 1fr;*/
+    grid-column-gap: auto;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: auto;
     grid-gap: 10px;
+    perspective: 2000px;
 }
+
 .card {
+    justify-content: center;
+    align-items: center;
+    font-size: x-large;
     margin: auto;
-    height: 100%;
-    width: 90%;
+    height: 100px;
+    overflow: auto;
+    width: 100%;
     padding: 2px;
     display: grid;
     background-color: #eeeeee;
+    transition: transform 0.5s;
+    transform-style: preserve-3d;
 }
 
 .clicked {
-    margin: auto;
-    height: 100%;
-    width: 90%;
-    padding: 2px;
-    display: grid;
+    transform: rotateX(180deg);
     background-color: #7fe0f8;
+}
+
+.back-card {
+    transform: rotateX(180deg);
 }
 
 .card:hover {
@@ -62,6 +70,7 @@ body {
     top: 11%;
     transform: translateY(-50%);
   }
+  
   #intro {
       margin-top: -12px;
       font-size: 22px;
@@ -71,4 +80,9 @@ body {
       text-align: center;
       margin: auto;
       margin-bottom: 15px;
+  }
+
+  #stacks {
+      width: 98%;
+      margin: auto;
   }
