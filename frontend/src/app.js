@@ -8,11 +8,15 @@ class App {
 	    })
     }
 
+	addNewStackFormListener(){
+		document.querySelector("#new-stack-form").addEventListener("submit", (e) => this.createStack(e));
+	}
+
     addStacks(info){
-	info.data.forEach((stack) => {
-	    this.addStack(stack);
-	})
-	this.displayStacks();
+		info.data.forEach((stack) => {
+	    	this.addStack(stack);
+		})
+		this.displayStacks();
     }
 
     addStack(stack){

@@ -73,23 +73,23 @@ class Stack {
 		cardForm.style.display = 'grid';
 		cardForm.innerHTML = '<h3>Add a new card to this stack</h3><div><label for="front">Front of card: </label><input id="front" required/></div><div><label for="back">Back of card: </label><input id="back"  required/></div><div><input type="submit" value="Add card to stack" /></div>';
 		stackDiv.appendChild(cardForm);
-		cardForm.addEventListener("submit",this.createCard);
+		cardForm.addEventListener("submit", this.createCard);
     }
 
     createCard = (e) => {
-	e.preventDefault();
-	fetch(`http://localhost:3000/stacks/${this.id}/cards`, {
-	    method: "POST",
-	    headers: {
-		"Content-Type": "application/json",
-		Accept: "application/json"
-	    },
-	    body: JSON.stringify({
-		"front": e.target.front.value,
-		"back": e.target.back.value,
-		"stack_id": this.id
-	    })
-	})
+		e.preventDefault();
+		fetch(`http://localhost:3000/stacks/${this.id}/cards`, {
+	    	method: "POST",
+			headers: {
+			"Content-Type": "application/json",
+			Accept: "application/json"
+			},
+			body: JSON.stringify({
+			"front": e.target.front.value,
+			"back": e.target.back.value,
+			"stack_id": this.id
+			})
+		})
 	    .then( (response) => response.json())
 	    .then( (info) => {
 			if(info.data.id){
@@ -101,22 +101,21 @@ class Stack {
 			}
 	    })
 	}
+	
+	addCard(cardInfo){
+		const card = new Card(cardInfo);
+		this.cards.push(card);
+		return card;
+	}
 
+	addCards(info){
+		info.data.forEach((card) => {
+			   this.addCard(card);
+		})
+	}
     removeCardForm(){
-	const cardForm = document.getElementById(`new-card-form-${this.id}`);
-	cardForm.remove();
+		const cardForm = document.getElementById(`new-card-form-${this.id}`);
+		cardForm.remove();
     }
 
-
-    addCard(cardInfo){
-	const card = new Card(cardInfo);
-	this.cards.push(card);
-	return card;
-    }
-
-    addCards(info){
-	info.data.forEach((card) => {
-	    this.addCard(card);
-	})
-    }
 }

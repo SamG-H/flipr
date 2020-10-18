@@ -1,6 +1,3 @@
 const app = new App();
-addNewStackFormListener();
+app.addNewStackFormListener();
 
-function addNewStackFormListener(){
-    document.querySelector("#new-stack-form").addEventListener("submit", (e) => {app.createStack(e)});
-}
