@@ -25,22 +25,40 @@ class Stack {
 		this.div.appendChild(cardsDiv);
 		this.div.appendChild(viewBtn);
     }
-
+	
+	sortCards(e){
+		this.cards.sort((a, b) => (a.front > b.front) ? 1 : -1);
+		this.cards.forEach(card => {
+			card.removeAllChildNodes(card.cardDiv);
+			card.display(this);
+		})
+	}
+	
     fetchCards(e){
-	fetch(`http://localhost:3000/stacks/${this.id}/cards`)
+		fetch(`http://localhost:3000/stacks/${this.id}/cards`)
 	    .then(r => r.json())
 	    .then(info => {
 			this.addCards(info);
 			this.cards.forEach((card) => {
-		    	card.display(this);
+				card.display(this);
 			})
 			const viewBtn = document.getElementById(`${this.id} btn`);
 			viewBtn.remove();
 			this.renderCardForm();
 			this.renderToggleBtn();
+			this.renderSortBtn();
 	    })
-    }
-    
+	}
+	
+	renderSortBtn(){
+		const sortBtn = document.createElement('button');
+		sortBtn.setAttribute('class', 'button');
+		sortBtn.setAttribute('id', `${this.id}-sort-btn`);
+		sortBtn.innerText = "Sort this stack!";
+		sortBtn.addEventListener("click", (e) => this.sortCards(e));
+		this.div.insertBefore(sortBtn, this.div.children[2]);
+	}
+
     renderToggleBtn(){
 		const toggleBtn = document.createElement('button');
 		toggleBtn.setAttribute('id', `${this.id} btn`);
@@ -49,13 +67,16 @@ class Stack {
 		toggleBtn.addEventListener("click", (e) => {
 			const cards = this.div.querySelectorAll('.card');
 			const newCardForm = this.div.querySelector('form');
+			const sortBtn = document.getElementById(`${this.id}-sort-btn`);
 			if(newCardForm.style.display === 'grid') {
+				sortBtn.style.display = 'none'
 				newCardForm.style.display = 'none';
 				toggleBtn.innerText = "Check this stack out!";
 				cards.forEach(card => {
 					card.style.display = 'none';
 				})
 			}else {
+				sortBtn.style.display = 'block'
 				newCardForm.style.display = 'grid';
 				toggleBtn.innerText = "Hide this stack!";
 				cards.forEach(card => {

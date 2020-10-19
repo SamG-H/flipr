@@ -3,36 +3,44 @@ class Card{
 		this.front = front;
 		this.back = back;
 		this.id = id;
+		this.cardDiv = document.createElement('div');
+		this.cardDiv.setAttribute('id', `${this.id}`);
+		this.cardDiv.setAttribute('class', 'card');
+		this.cardDiv.style.display = 'grid';
+		this.frontCard = document.createElement('div');
+		this.backCard = document.createElement('div');
+		this.cardDiv.addEventListener("click", e => this.flip(e));
+		this.frontCard.setAttribute('class', 'front-card');
+		this.backCard.setAttribute('class', 'back-card');
+		this.frontCard.innerText = `${this.front}`;
+		this.backCard.innerText = `${this.back}`;
+		this.backCard.style.fontWeight = 'bold';
+		this.backCard.style.display = 'none';
     }
 
     display(stack){
 		const cardsDiv = document.getElementById(`cards-${stack.id}`);
-		const cardDiv = document.createElement('div');
-		cardDiv.setAttribute('id', `${this.id}`);
-		cardDiv.setAttribute('class', 'card');
-		cardDiv.style.cursor = 'pointer';
-		cardDiv.style.display = 'grid';
-		const frontCard = document.createElement('div');
-		const backCard = document.createElement('div');
-		frontCard.setAttribute('class', 'front-card');
-		backCard.setAttribute('class', 'back-card');
-		frontCard.innerText = `${this.front}`;
-		backCard.innerText = `${this.back}`;
-		backCard.style.fontWeight = 'bold';
-		backCard.style.display = 'none';
-		cardDiv.appendChild(frontCard);
-		cardDiv.appendChild(backCard);
-		cardDiv.addEventListener("click", (e) =>{
-			cardDiv.classList.toggle('clicked');
-			if(backCard.style.display === 'none') {
-				backCard.style.display = 'grid';
-				frontCard.style.display = 'none';
-			}else {
-				cardDiv.setAttribute('class', 'card');
-				backCard.style.display = 'none';
-				frontCard.style.display = 'grid';
-			}
-	})
-		cardsDiv.appendChild(cardDiv);
-    }
+		this.cardDiv.appendChild(this.frontCard);
+		this.cardDiv.appendChild(this.backCard);
+		cardsDiv.appendChild(this.cardDiv);
+	}
+
+	flip(e) {
+		console.log(this.cardDiv.classList);
+		this.cardDiv.classList.toggle('clicked');
+		if(this.backCard.style.display === 'none') {
+			this.backCard.style.display = 'grid';
+			this.frontCard.style.display = 'none';
+		}else {
+			this.cardDiv.setAttribute('class', 'card');
+			this.backCard.style.display = 'none';
+			this.frontCard.style.display = 'grid';
+		}
+	}
+	
+	removeAllChildNodes(parent) {
+		while (parent.firstChild) {
+			parent.removeChild(parent.firstChild);
+		}
+	}
 }
