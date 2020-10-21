@@ -26,7 +26,6 @@ class Card{
 	}
 
 	flip(e) {
-		console.log(this.cardDiv.classList);
 		this.cardDiv.classList.toggle('clicked');
 		if(this.backCard.style.display === 'none') {
 			this.backCard.style.display = 'grid';
