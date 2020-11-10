@@ -1,6 +1,7 @@
 body {
     background-color: white;
     height: 100%;
+    font-family: 'Rubik';
 }
 
 .stack {
@@ -86,4 +87,9 @@ body {
   #stacks {
       width: 98%;
       margin: auto;
+  }
+
+  footer {
+      text-align: center;
+      font-size: larger;
   }
