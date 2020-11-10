@@ -1,7 +1,10 @@
 class StacksController < ApplicationController
   def index
     stacks = Stack.all
-    render json: StackSerializer.new(stacks)
+    options = {
+      include: [:cards]
+    }
+    render json: StackSerializer.new(stacks, options)
   end
   
   def create
