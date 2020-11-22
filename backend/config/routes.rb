@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :scores
   resources :stacks, only: [:index, :create] do
       resources :cards, only: [:index, :create]
   end

@@ -10,11 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_06_154323) do
+ActiveRecord::Schema.define(version: 2020_11_17_190548) do
 
   create_table "cards", force: :cascade do |t|
     t.string "front"
     t.string "back"
+    t.integer "stack_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "scores", force: :cascade do |t|
+    t.string "name"
+    t.integer "percentage"
     t.integer "stack_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

@@ -1,12 +1,16 @@
 class App {
     constructor() {
 	this.stacks = [];
-	fetch('http://localhost:3000/stacks')
-	    .then(r => r.json())
-	    .then(info => {
-			this.addStacks(info);
-	    })
-    }
+	this.getStacks();
+	}
+	
+	getStacks(){
+		fetch('http://localhost:3000/stacks')
+	    	.then(r => r.json())
+	    	.then(info => {
+				this.addStacks(info);
+	    	})
+	}
 
 	addNewStackFormListener(){
 		document.querySelector("#new-stack-form").addEventListener("submit", (e) => this.createStack(e));
