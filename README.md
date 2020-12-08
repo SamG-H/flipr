@@ -4,9 +4,6 @@ Welcome to flipr, a place where you create custom flash cards to study everythin
 
 ## Installation
     1. clone this repo
-    2. cd into backend directory
-    3. run *bundle install*
-    4. run *rails s*
 ## Usage
    Open index.html from the frontend directory in your browser of choice
 ## Contributing

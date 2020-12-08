@@ -5,7 +5,7 @@ class App {
 	}
 	
 	getStacks(){
-		fetch('http://localhost:3000/stacks')
+		fetch(BASE_URL + 'stacks')
 	    	.then(r => r.json())
 	    	.then(info => {
 				this.addStacks(info);
@@ -35,7 +35,7 @@ class App {
 
     createStack(e){
 	e.preventDefault();
-	fetch('http://localhost:3000/stacks', {
+	fetch(BASE_URL + 'stacks', {
 	    method: "POST",
 	    headers:
 	    {

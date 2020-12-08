@@ -35,7 +35,7 @@ class Stack {
 	}
 	
     fetchCards(e){
-		fetch(`http://localhost:3000/stacks/${this.id}/cards`)
+		fetch(BASE_URL + `stacks/${this.id}/cards`)
 	    .then(r => r.json())
 	    .then(info => {
 			this.addCards(info);
@@ -99,7 +99,7 @@ class Stack {
 
     createCard = (e) => {
 		e.preventDefault();
-		fetch(`http://localhost:3000/stacks/${this.id}/cards`, {
+		fetch(BASE_URL + `stacks/${this.id}/cards`, {
 	    	method: "POST",
 			headers: {
 			"Content-Type": "application/json",
