@@ -1,5 +1,5 @@
 class Card{
-    constructor({id, attributes: {front, back}}) {
+  constructor({id, attributes: {front, back}}) {
 		this.front = front;
 		this.back = back;
 		this.id = id;
@@ -16,9 +16,9 @@ class Card{
 		this.backCard.innerText = `${this.back}`;
 		this.backCard.style.fontWeight = 'bold';
 		this.backCard.style.display = 'none';
-    }
+  }
 
-    display(stack){
+  display(stack){
 		const cardsDiv = document.getElementById(`cards-${stack.id}`);
 		this.cardDiv.appendChild(this.frontCard);
 		this.cardDiv.appendChild(this.backCard);
@@ -27,10 +27,10 @@ class Card{
 
 	flip(e) {
 		this.cardDiv.classList.toggle('clicked');
-		if(this.backCard.style.display === 'none') {
+		if (this.backCard.style.display === 'none') {
 			this.backCard.style.display = 'grid';
 			this.frontCard.style.display = 'none';
-		}else {
+		} else {
 			this.cardDiv.setAttribute('class', 'card');
 			this.backCard.style.display = 'none';
 			this.frontCard.style.display = 'grid';
